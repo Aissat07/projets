@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} /* permet de retirer toute la mise en forme par défaut*/
+
+body {
+    max-width: 100vw; /* on prend en compte toute le hauteur possible*/
+    height: 100vh; /* toute la hauteur de l'ecran*/
+    display: flex; /* mettre les elts au centre*/
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+}
+
+.calculatrice {
+    background-color: #222222;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 5px black;
+}
+
+.ecran {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(198,237,255);
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-end; /* aligner les elts à gauche*/
+    align-items: flex-end;/* aligner les elts vers la gauche*/
+    padding: 5px;
+    font-size: 25px;
+}
+
+.touches {
+    display: grid;
+    grid-template-columns: repeat(4, 50px); /* donne moi 4 colonnes qui font 50px de large*/
+    grid-template-rows: repeat(5, 50px); /* donne moi 5 lignes qui font 50px de haut*/
+    grid-gap: 7px; /* permet de faire de l'espace de tous les cotés des grid*/
+}
+
+button {
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    box-shadow: 0 3 px #a8a8a8;
+    font-size: 18px;
+}
+button:active {
+    box-shadow: 0 1px #a8a8a8;
+    transform: translateY(2px);
+}
+
+button[ data-key="8"] {
+    background-color: #ff9900;
+    font-weight: bold;
+    color: white;
+}
+
+button[data-key="13"] {
+    grid-column: span 2; /* etale toi sur deux colonnes*/
+    background-color: #36e700;
+    font-weight: bold;
+    color: white;
+    font-size: 35;
+}
